@@ -14,7 +14,7 @@ const GiftBanner = () => {
             </div>
             <h2>Give the Gift of Creativity</h2>
             <p>
-              Looking for a gift that keeps on giving? KiwiCo gift subscriptions
+              Looking for a gift that keeps on giving? Edukit gift subscriptions
               deliver months of hands-on fun, learning, and quality time.
             </p>
             <div className="gift-banner-features">
@@ -40,7 +40,7 @@ const GiftBanner = () => {
             <div className="gift-image-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=600"
-                alt="Gift wrapped KiwiCo box"
+                alt="Gift wrapped Edukit box"
               />
               <div className="gift-decoration gift-star">
                 <Sparkles size={32} />

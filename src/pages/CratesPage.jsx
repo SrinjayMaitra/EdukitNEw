@@ -76,7 +76,7 @@ const CratesPage = () => {
       {/* Features Section */}
       <section className="crates-features">
         <div className="container">
-          <h2>Why Choose KiwiCo?</h2>
+          <h2>Why Choose Edukit?</h2>
           <div className="features-grid">
             <div className="feature-item">
               <div className="feature-icon">

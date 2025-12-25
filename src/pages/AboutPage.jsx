@@ -70,7 +70,7 @@ const AboutPage = () => {
           <div className="hero-content">
             <h1>Inspiring the Next Generation of Innovators</h1>
             <p>
-              At KiwiCo, we believe every child has the potential to change the world.
+              At Edukit, we believe every child has the potential to change the world.
               Our mission is to inspire kids to see themselves as makers and innovators
               through hands-on projects that make learning feel like play.
             </p>
@@ -99,7 +99,7 @@ const AboutPage = () => {
             <div className="story-content">
               <h2>Our Story</h2>
               <p>
-                KiwiCo was born from a simple observation: children learn best when
+                Edukit was born from a simple observation: children learn best when
                 they're having fun. Our founder, a former engineer and mother of three,
                 noticed that the most memorable learning moments happened when her kids
                 were building, creating, and exploring with their hands.
@@ -119,7 +119,7 @@ const AboutPage = () => {
             <div className="story-image">
               <img
                 src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600"
-                alt="Kids enjoying KiwiCo projects"
+                alt="Kids enjoying Edukit projects"
               />
               <div className="story-badge">
                 <Sparkles size={24} />

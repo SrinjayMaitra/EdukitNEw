@@ -92,9 +92,9 @@ const HowItWorksPage = () => {
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
-              <h1>How KiwiCo Works</h1>
+              <h1>How Edukit Works</h1>
               <p>
-                Getting started with KiwiCo is easy. In just a few simple steps,
+                Getting started with Edukit is easy. In just a few simple steps,
                 you'll unlock a world of hands-on learning and creative fun for
                 your family.
               </p>
@@ -106,7 +106,7 @@ const HowItWorksPage = () => {
               <div className="video-placeholder">
                 <img
                   src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600"
-                  alt="Kids enjoying KiwiCo"
+                  alt="Kids enjoying Edukit"
                 />
                 <button className="play-btn">
                   <Play size={32} fill="white" />
@@ -154,7 +154,7 @@ const HowItWorksPage = () => {
       {/* Benefits Section */}
       <section className="hiw-benefits">
         <div className="container">
-          <h2>Why Families Love KiwiCo</h2>
+          <h2>Why Families Love Edukit</h2>
           <div className="benefits-grid">
             {benefits.map((benefit, index) => (
               <div key={index} className="benefit-card">
@@ -197,7 +197,7 @@ const HowItWorksPage = () => {
             <h2>Ready to Start Your Adventure?</h2>
             <p>
               Join over 50 million kids and families who have discovered
-              the joy of hands-on learning with KiwiCo.
+              the joy of hands-on learning with Edukit.
             </p>
             <Button to="/crates" variant="primary" size="lg">
               Get Your First Crate

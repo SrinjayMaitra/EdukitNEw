@@ -21,7 +21,7 @@ const defaultFaqs = [
   {
     id: 4,
     question: 'What if my child doesn\'t like a crate?',
-    answer: 'We want every family to love their KiwiCo experience! If a crate isn\'t quite right, contact our customer service team within 30 days of delivery. We\'ll work with you to make it right, whether that\'s a replacement crate or a refund.'
+    answer: 'We want every family to love their Edukit experience! If a crate isn\'t quite right, contact our customer service team within 30 days of delivery. We\'ll work with you to make it right, whether that\'s a replacement crate or a refund.'
   },
   {
     id: 5,

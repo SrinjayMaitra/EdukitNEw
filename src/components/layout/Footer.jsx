@@ -58,7 +58,7 @@ const Footer = () => {
         <div className="container">
           <div className="newsletter-content">
             <div className="newsletter-text">
-              <h3>Join the KiwiCo Family</h3>
+              <h3>Join the Edukit Family</h3>
               <p>Get exclusive offers, project ideas, and parenting tips delivered to your inbox.</p>
             </div>
             <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
@@ -81,8 +81,8 @@ const Footer = () => {
               <Link to="/" className="footer-logo">
                 <svg viewBox="0 0 120 40" className="logo-svg">
                   <circle cx="20" cy="20" r="18" fill="#00AB5F" />
-                  <text x="20" y="26" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">K</text>
-                  <text x="70" y="28" fill="#FFFFFF" fontSize="22" fontWeight="bold" fontFamily="Nunito">KiwiCo</text>
+                  <text x="20" y="26" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">E</text>
+                  <text x="70" y="28" fill="#FFFFFF" fontSize="22" fontWeight="bold" fontFamily="Nunito">Edukit</text>
                 </svg>
               </Link>
               <p className="footer-tagline">
@@ -117,7 +117,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} KiwiCo Clone. All rights reserved.</p>
+            <p>&copy; {currentYear} Edukit. All rights reserved.</p>
             <div className="footer-legal">
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/terms">Terms of Service</Link>

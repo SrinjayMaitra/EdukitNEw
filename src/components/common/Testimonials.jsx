@@ -8,7 +8,7 @@ const testimonials = [
     name: 'Sarah M.',
     location: 'California',
     rating: 5,
-    text: "My kids absolutely love getting their KiwiCo crates each month! The projects are engaging, educational, and most importantly - fun! It's become our favorite family activity.",
+    text: "My kids absolutely love getting their Edukit crates each month! The projects are engaging, educational, and most importantly - fun! It's become our favorite family activity.",
     crate: 'Kiwi Crate',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100'
   },

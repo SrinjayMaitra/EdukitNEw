@@ -73,8 +73,8 @@ const Header = () => {
           <Link to="/" className="logo">
             <svg viewBox="0 0 120 40" className="logo-svg">
               <circle cx="20" cy="20" r="18" fill="#00AB5F" />
-              <text x="20" y="26" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">K</text>
-              <text x="70" y="28" fill="#1F2937" fontSize="22" fontWeight="bold" fontFamily="Nunito">KiwiCo</text>
+              <text x="20" y="26" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">E</text>
+              <text x="70" y="28" fill="#1F2937" fontSize="22" fontWeight="bold" fontFamily="Nunito">Edukit</text>
             </svg>
           </Link>
 

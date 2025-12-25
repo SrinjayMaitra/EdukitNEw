@@ -92,7 +92,7 @@ const GiftsPage = () => {
             </span>
             <h1>Give the Gift of Creativity & Discovery</h1>
             <p>
-              Make any occasion special with a KiwiCo gift subscription.
+              Make any occasion special with an Edukit gift subscription.
               Inspire months of hands-on learning, creativity, and family fun.
             </p>
             <div className="hero-stats">
@@ -231,7 +231,7 @@ const GiftsPage = () => {
       {/* Features Section */}
       <section className="gift-features">
         <div className="container">
-          <h2>The KiwiCo Gift Experience</h2>
+          <h2>The Edukit Gift Experience</h2>
           <div className="features-grid">
             {giftFeatures.map((feature, index) => (
               <div key={index} className="feature-card">
@@ -253,7 +253,7 @@ const GiftsPage = () => {
             <div className="gift-card-info">
               <h2>Not Sure Which Crate?</h2>
               <p>
-                Give the gift of choice! KiwiCo gift cards let the recipient
+                Give the gift of choice! Edukit gift cards let the recipient
                 pick the perfect crate for their interests and age.
               </p>
               <ul>
@@ -270,7 +270,7 @@ const GiftsPage = () => {
               <div className="gift-card-visual">
                 <div className="card-design">
                   <Gift size={40} />
-                  <span>KiwiCo Gift Card</span>
+                  <span>Edukit Gift Card</span>
                   <span className="card-amount">$50</span>
                 </div>
               </div>
