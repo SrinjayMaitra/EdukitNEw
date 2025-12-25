@@ -1,0 +1,9 @@
+export { default as HomePage } from './HomePage';
+export { default as CratesPage } from './CratesPage';
+export { default as CrateDetailPage } from './CrateDetailPage';
+export { default as ShopPage } from './ShopPage';
+export { default as ProductDetailPage } from './ProductDetailPage';
+export { default as GiftsPage } from './GiftsPage';
+export { default as AboutPage } from './AboutPage';
+export { default as HowItWorksPage } from './HowItWorksPage';
+export { default as CartPage } from './CartPage';

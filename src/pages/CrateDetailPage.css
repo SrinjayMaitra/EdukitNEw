@@ -1,0 +1,418 @@
+/* Crate Detail Page Styles */
+.crate-detail-page {
+  background: var(--white);
+}
+
+.crate-not-found {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.crate-not-found h1 {
+  margin-bottom: 16px;
+}
+
+.crate-not-found p {
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+/* Hero Section */
+.crate-hero {
+  padding: 60px 0;
+  background: var(--gray-50);
+}
+
+.crate-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Crate Images */
+.crate-images {
+  position: sticky;
+  top: 140px;
+}
+
+.main-image {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.main-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.age-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 8px 16px;
+  background: var(--crate-color, var(--primary-green));
+  color: var(--white);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+
+.thumbnail-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.thumbnail-row img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.thumbnail-row img:hover {
+  opacity: 0.8;
+}
+
+/* Crate Info */
+.crate-info {
+  padding: 20px 0;
+}
+
+.crate-tagline {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--crate-color, var(--primary-green));
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+}
+
+.crate-info h1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.crate-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rating-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.crate-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+/* Subscription Plans */
+.subscription-plans {
+  margin-bottom: 24px;
+}
+
+.subscription-plans h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.plan-option {
+  position: relative;
+  padding: 16px 12px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.plan-option:hover {
+  border-color: var(--crate-color, var(--primary-green));
+}
+
+.plan-option.selected {
+  border-color: var(--crate-color, var(--primary-green));
+  background: var(--primary-green-light);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: var(--tinker-yellow);
+  color: var(--text-primary);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.plan-label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.plan-discount {
+  font-size: 12px;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.plan-price {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Price Summary */
+.price-summary {
+  background: var(--gray-50);
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.price-row:last-child {
+  border-top: 1px solid var(--gray-200);
+  margin-top: 8px;
+  padding-top: 16px;
+}
+
+.total-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--crate-color, var(--primary-green));
+}
+
+.gift-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  transition: color var(--transition-fast);
+}
+
+.gift-link:hover {
+  color: var(--crate-color, var(--primary-green));
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.trust-badge svg {
+  color: var(--crate-color, var(--primary-green));
+}
+
+/* What's Included */
+.whats-included {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.whats-included h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.included-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.included-item svg {
+  flex-shrink: 0;
+  color: var(--crate-color, var(--primary-green));
+}
+
+.included-item span {
+  font-size: 16px;
+}
+
+/* Crate Features */
+.crate-features {
+  padding: 80px 0;
+  background: var(--crate-color, var(--primary-green));
+  color: var(--white);
+}
+
+.crate-features h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 32px 24px;
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.feature-number {
+  font-size: 32px;
+  font-weight: 800;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.feature-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Related Crates */
+.related-crates {
+  padding: 80px 0;
+  background: var(--gray-50);
+}
+
+.related-crates h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 48px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .crate-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .crate-images {
+    position: static;
+  }
+
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .crate-hero {
+    padding: 40px 0;
+  }
+
+  .crate-info h1 {
+    font-size: 28px;
+  }
+
+  .whats-included,
+  .crate-features,
+  .related-crates {
+    padding: 60px 0;
+  }
+
+  .whats-included h2,
+  .crate-features h2,
+  .related-crates h2 {
+    font-size: 28px;
+  }
+
+  .included-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .trust-badge {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+}

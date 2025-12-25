@@ -1,0 +1,28 @@
+/* Hero Section - KiwiCo Style */
+.hero {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero:hover .hero-video {
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-video {
+    min-height: 50vh;
+    object-fit: cover;
+  }
+}
