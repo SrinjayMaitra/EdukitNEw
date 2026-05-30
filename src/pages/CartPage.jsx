@@ -1,48 +1,16 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Trash2, Minus, Plus, ArrowLeft, ShoppingBag, Lock } from 'lucide-react';
 import Button from '../components/common/Button';
+import { useCart } from '../context/CartContext';
 import './CartPage.css';
 
+const FREE_SHIPPING_THRESHOLD = 300;
+const SHIPPING_FEE = 25;
+
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: 'Kiwi Crate - 6 Month Subscription',
-      type: 'subscription',
-      price: 21.56,
-      originalPrice: 23.95,
-      quantity: 1,
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=200',
-      details: 'Ages 5-8 | Monthly delivery'
-    },
-    {
-      id: 2,
-      name: 'Hydraulic Claw Kit',
-      type: 'product',
-      price: 24.95,
-      quantity: 2,
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=200',
-      details: 'Ages 8+'
-    }
-  ]);
+  const { cartItems, updateQuantity, removeItem, subtotal } = useCart();
 
-  const updateQuantity = (id, delta) => {
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-          : item
-      )
-    );
-  };
-
-  const removeItem = (id) => {
-    setCartItems(items => items.filter(item => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = subtotal > 35 ? 0 : 5.95;
+  const shipping = subtotal >= FREE_SHIPPING_THRESHOLD || subtotal === 0 ? 0 : SHIPPING_FEE;
   const total = subtotal + shipping;
 
   if (cartItems.length === 0) {
@@ -52,9 +20,9 @@ const CartPage = () => {
           <div className="empty-cart">
             <ShoppingBag size={80} strokeWidth={1} />
             <h1>Your cart is empty</h1>
-            <p>Looks like you haven't added anything to your cart yet.</p>
+            <p>Looks like you haven't added any laptops to your cart yet.</p>
             <Button to="/shop" variant="primary" size="lg">
-              Start Shopping
+              Browse Laptops
             </Button>
           </div>
         </div>
@@ -82,17 +50,17 @@ const CartPage = () => {
                 </div>
                 <div className="item-details">
                   <h3>{item.name}</h3>
-                  <p className="item-meta">{item.details}</p>
-                  {item.type === 'subscription' && (
-                    <span className="subscription-badge">Subscription</span>
+                  {item.category && (
+                    <p className="item-meta">{item.category.replace('-', ' ')}</p>
                   )}
+                  <span className="item-unit-price">${item.price.toFixed(2)} each</span>
                 </div>
                 <div className="item-quantity">
-                  <button onClick={() => updateQuantity(item.id, -1)}>
+                  <button onClick={() => updateQuantity(item.id, -1)} aria-label="Decrease quantity">
                     <Minus size={16} />
                   </button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => updateQuantity(item.id, 1)}>
+                  <button onClick={() => updateQuantity(item.id, 1)} aria-label="Increase quantity">
                     <Plus size={16} />
                   </button>
                 </div>
@@ -102,7 +70,7 @@ const CartPage = () => {
                     <span className="original">${(item.originalPrice * item.quantity).toFixed(2)}</span>
                   )}
                 </div>
-                <button className="remove-btn" onClick={() => removeItem(item.id)}>
+                <button className="remove-btn" onClick={() => removeItem(item.id)} aria-label="Remove item">
                   <Trash2 size={18} />
                 </button>
               </div>
@@ -117,12 +85,12 @@ const CartPage = () => {
                 <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="summary-row">
-                <span>Shipping</span>
+                <span>Shipping to Nigeria</span>
                 <span>{shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}</span>
               </div>
               {shipping > 0 && (
                 <p className="free-shipping-note">
-                  Add ${(35 - subtotal).toFixed(2)} more for free shipping!
+                  Add ${(FREE_SHIPPING_THRESHOLD - subtotal).toFixed(2)} more for free shipping!
                 </p>
               )}
               <div className="summary-row total">
@@ -134,7 +102,7 @@ const CartPage = () => {
               </Button>
               <div className="security-note">
                 <Lock size={14} />
-                <span>Secure checkout</span>
+                <span>Secure checkout · Customs & duties handled by Edukit</span>
               </div>
             </div>
 

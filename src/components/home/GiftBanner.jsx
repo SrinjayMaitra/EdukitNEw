@@ -1,55 +1,47 @@
-import { Gift, Heart, Sparkles } from 'lucide-react';
+import { ShieldCheck, Headphones, Truck } from 'lucide-react';
 import Button from '../common/Button';
 import './GiftBanner.css';
+
+const trustPoints = [
+  {
+    icon: ShieldCheck,
+    title: '1-Year Warranty',
+    desc: 'Every laptop ships with a full 12-month hardware warranty. Remote support included.'
+  },
+  {
+    icon: Truck,
+    title: 'Customs Handled',
+    desc: 'We manage all import paperwork and customs clearance. No hidden fees, no hassle for you.'
+  },
+  {
+    icon: Headphones,
+    title: 'After-Sale Support',
+    desc: 'WhatsApp-based support team ready to help with setup, troubleshooting, and IT guidance.'
+  }
+];
 
 const GiftBanner = () => {
   return (
     <section className="gift-banner">
       <div className="container">
-        <div className="gift-content">
-          <div className="gift-text">
-            <div className="gift-badge">
-              <Gift size={20} />
-              Perfect Gift
-            </div>
-            <h2>Give the Gift of Creativity</h2>
-            <p>
-              Looking for a gift that keeps on giving? Edukit gift subscriptions
-              deliver months of hands-on fun, learning, and quality time.
-            </p>
-            <div className="gift-banner-features">
-              <div className="gift-banner-feature-item">
-                <Heart size={20} />
-                <span>Personalized gift message included</span>
+        <div className="trust-header">
+          <h2>Why Buy From Edukit?</h2>
+          <p>We're not just a shop. We're a bridge between India's tech supply and Nigeria's IT workforce.</p>
+        </div>
+        <div className="trust-grid">
+          {trustPoints.map((point, i) => (
+            <div key={i} className="trust-card">
+              <div className="trust-icon">
+                <point.icon size={28} />
               </div>
-              <div className="gift-banner-feature-item">
-                <Sparkles size={20} />
-                <span>Choose 1, 3, 6, or 12 month plans</span>
-              </div>
+              <h3>{point.title}</h3>
+              <p>{point.desc}</p>
             </div>
-            <div className="gift-actions">
-              <Button to="/gifts" variant="white" size="lg">
-                Shop Gift Subscriptions
-              </Button>
-              <Button to="/gift-cards" variant="outline" size="lg" className="btn-ghost">
-                Gift Cards
-              </Button>
-            </div>
-          </div>
-          <div className="gift-visual">
-            <div className="gift-image-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=600"
-                alt="Gift wrapped Edukit box"
-              />
-              <div className="gift-decoration gift-star">
-                <Sparkles size={32} />
-              </div>
-              <div className="gift-decoration gift-heart">
-                <Heart size={28} fill="currentColor" />
-              </div>
-            </div>
-          </div>
+          ))}
+        </div>
+        <div className="trust-cta">
+          <Button to="/shop" variant="primary" size="lg">Shop Laptops</Button>
+          <Button to="/about" variant="outline" size="lg">Our Story</Button>
         </div>
       </div>
     </section>

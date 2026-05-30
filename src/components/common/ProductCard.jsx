@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Star, ShoppingCart } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
 import './ProductCard.css';
 
 const ProductCard = ({ product, onAddToCart }) => {
+  const { addToCart } = useCart();
   const {
     id,
     name,
@@ -27,35 +29,37 @@ const ProductCard = ({ product, onAddToCart }) => {
           {discount > 0 && <span className="product-discount">-{discount}%</span>}
         </div>
         <div className="product-info">
-          <span className="product-category">{category}</span>
-          <h3 className="product-name">{name}</h3>
-          <div className="product-meta">
+          <div className="product-info-top">
+            <span className="product-category">{category}</span>
             <div className="product-rating">
               <Star size={14} fill="#FACC15" stroke="#FACC15" />
               <span>{rating}</span>
               <span className="review-count">({reviewCount})</span>
             </div>
-            <span className="product-age">Ages {ageRange}</span>
           </div>
-          <div className="product-pricing">
-            <span className="current-price">${price.toFixed(2)}</span>
-            {originalPrice && (
-              <span className="original-price">${originalPrice.toFixed(2)}</span>
-            )}
-          </div>
+          <h3 className="product-name">{name}</h3>
         </div>
       </Link>
-      <button
-        className="add-to-cart-btn"
-        onClick={(e) => {
-          e.preventDefault();
-          onAddToCart && onAddToCart(product);
-        }}
-        aria-label={`Add ${name} to cart`}
-      >
-        <ShoppingCart size={18} />
-        Add to Cart
-      </button>
+      <div className="product-footer">
+        <div className="product-pricing">
+          <span className="current-price">${price.toFixed(2)}</span>
+          {originalPrice && (
+            <span className="original-price">${originalPrice.toFixed(2)}</span>
+          )}
+        </div>
+        <button
+          className="add-to-cart-btn"
+          onClick={(e) => {
+            e.preventDefault();
+            addToCart(product);
+            onAddToCart && onAddToCart(product);
+          }}
+          aria-label={`Add ${name} to cart`}
+        >
+          <ShoppingCart size={18} />
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 };

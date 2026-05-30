@@ -5,42 +5,40 @@ import './FAQ.css';
 const defaultFaqs = [
   {
     id: 1,
-    question: 'How does the subscription work?',
-    answer: 'Our subscription is simple and flexible! Choose a crate, pick a plan (monthly, 3-month, 6-month, or 12-month), and we\'ll deliver a new crate of hands-on projects to your door each month. You can pause, skip, or cancel anytime.'
+    question: 'How long does delivery to Nigeria take?',
+    answer: 'Standard delivery takes 7–14 business days from the date of dispatch. We ship via reliable international couriers and provide a full tracking number as soon as the order leaves our India facility.'
   },
   {
     id: 2,
-    question: 'What age groups do you serve?',
-    answer: 'We have crates designed for all ages, from 0-104! Panda Crate is perfect for babies (0-2), Koala Crate for toddlers (2-4), Kiwi and Atlas Crates for elementary ages (5-8 and 6-11), and Tinker, Doodle, Maker, and Eureka Crates for tweens, teens, and adults.'
+    question: 'Do I need to pay customs duties?',
+    answer: 'We handle all customs documentation from our side. However, import duties in Nigeria may apply depending on the declared value. We will inform you of any applicable duties before your order ships so there are no surprises.'
   },
   {
     id: 3,
-    question: 'Can I gift a subscription?',
-    answer: 'Absolutely! Gift subscriptions make the perfect present for any occasion. Choose the number of months you\'d like to gift, and we\'ll send a beautiful gift notification to the recipient. They\'ll receive their first crate within 1-2 weeks.'
+    question: 'What warranty do the laptops come with?',
+    answer: 'All laptops — new and refurbished — come with a 1-year hardware warranty. If any hardware issue arises within that period, we coordinate a repair or replacement. Our WhatsApp support team is also available for remote troubleshooting.'
   },
   {
     id: 4,
-    question: 'What if my child doesn\'t like a crate?',
-    answer: 'We want every family to love their Edukit experience! If a crate isn\'t quite right, contact our customer service team within 30 days of delivery. We\'ll work with you to make it right, whether that\'s a replacement crate or a refund.'
+    question: 'Are refurbished laptops reliable?',
+    answer: 'Yes. Our refurbished units are sourced from certified resellers, professionally cleaned and tested, and graded before listing. Each unit passes a quality check covering battery health, keyboard, ports, and display. We would not list anything we would not use ourselves.'
   },
   {
     id: 5,
-    question: 'Do I need to provide any materials?',
-    answer: 'Nope! Each crate comes with everything needed to complete the projects, including detailed instructions. You might occasionally want scissors or tape for extra projects, but the core activities are ready to go right out of the box.'
+    question: 'What payment methods do you accept?',
+    answer: 'We accept international debit/credit cards, PayPal, and bank transfers. We are also working on integrating Naira payment options for Nigerian customers — stay tuned.'
   },
   {
     id: 6,
-    question: 'When will my crate arrive?',
-    answer: 'New subscriptions typically ship within 1-3 business days. Monthly crates ship around the same time each month. Shipping usually takes 3-7 business days depending on your location. You\'ll receive tracking information via email when your crate ships.'
+    question: 'Can I return a laptop if there is a problem?',
+    answer: 'If your laptop arrives damaged or faulty, contact us within 7 days of delivery and we will arrange a replacement or full refund. We do not accept returns for buyer\'s remorse, but our product descriptions are detailed enough to make the right choice.'
   }
 ];
 
 const FAQ = ({ faqs = defaultFaqs, title = "Frequently Asked Questions" }) => {
   const [openId, setOpenId] = useState(null);
 
-  const toggleFaq = (id) => {
-    setOpenId(openId === id ? null : id);
-  };
+  const toggleFaq = (id) => setOpenId(openId === id ? null : id);
 
   return (
     <section className="faq-section">
@@ -48,10 +46,7 @@ const FAQ = ({ faqs = defaultFaqs, title = "Frequently Asked Questions" }) => {
         <h2 className="faq-title">{title}</h2>
         <div className="faq-list">
           {faqs.map((faq) => (
-            <div
-              key={faq.id}
-              className={`faq-item ${openId === faq.id ? 'open' : ''}`}
-            >
+            <div key={faq.id} className={`faq-item ${openId === faq.id ? 'open' : ''}`}>
               <button
                 className="faq-question"
                 onClick={() => toggleFaq(faq.id)}

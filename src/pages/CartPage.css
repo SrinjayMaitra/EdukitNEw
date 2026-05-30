@@ -101,18 +101,15 @@
 .item-meta {
   font-size: 13px;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
 }
 
-.subscription-badge {
+.item-unit-price {
   display: inline-block;
-  padding: 4px 10px;
-  background: var(--primary-green-light);
-  color: var(--primary-green);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  border-radius: var(--radius-full);
+  color: var(--text-secondary);
 }
 
 .item-quantity {

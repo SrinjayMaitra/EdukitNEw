@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Mail } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,24 +9,10 @@ const Footer = () => {
     shop: {
       title: 'Shop',
       links: [
-        { label: 'All Crates', path: '/crates' },
-        { label: 'Shop Products', path: '/shop' },
-        { label: 'Gift Cards', path: '/gift-cards' },
-        { label: 'Gifts', path: '/gifts' },
-        { label: 'Sale', path: '/shop?filter=sale' }
-      ]
-    },
-    crates: {
-      title: 'Crate Lines',
-      links: [
-        { label: 'Panda Crate (0-2)', path: '/crates/panda-crate' },
-        { label: 'Koala Crate (2-4)', path: '/crates/koala-crate' },
-        { label: 'Kiwi Crate (5-8)', path: '/crates/kiwi-crate' },
-        { label: 'Atlas Crate (6-11)', path: '/crates/atlas-crate' },
-        { label: 'Tinker Crate (9-16+)', path: '/crates/tinker-crate' },
-        { label: 'Doodle Crate (9-16+)', path: '/crates/doodle-crate' },
-        { label: 'Maker Crate (14+)', path: '/crates/maker-crate' },
-        { label: 'Eureka Crate (14+)', path: '/crates/eureka-crate' }
+        { label: 'All Laptops', path: '/shop' },
+        { label: 'Budget Laptops', path: '/shop?category=budget' },
+        { label: 'Mid-Range Laptops', path: '/shop?category=mid-range' },
+        { label: 'Refurbished', path: '/shop?category=refurbished' }
       ]
     },
     company: {
@@ -34,9 +20,8 @@ const Footer = () => {
       links: [
         { label: 'About Us', path: '/about' },
         { label: 'How It Works', path: '/how-it-works' },
-        { label: 'Careers', path: '/careers' },
-        { label: 'Press', path: '/press' },
-        { label: 'Blog', path: '/blog' }
+        { label: 'Blog', path: '/blog' },
+        { label: 'Careers', path: '/careers' }
       ]
     },
     support: {
@@ -48,18 +33,25 @@ const Footer = () => {
         { label: 'Returns', path: '/returns' },
         { label: 'FAQs', path: '/faqs' }
       ]
+    },
+    legal: {
+      title: 'Legal',
+      links: [
+        { label: 'Privacy Policy', path: '/privacy' },
+        { label: 'Terms of Service', path: '/terms' },
+        { label: 'Accessibility', path: '/accessibility' }
+      ]
     }
   };
 
   return (
     <footer className="footer">
-      {/* Newsletter Section */}
       <div className="footer-newsletter">
         <div className="container">
           <div className="newsletter-content">
             <div className="newsletter-text">
-              <h3>Join the Edukit Family</h3>
-              <p>Get exclusive offers, project ideas, and parenting tips delivered to your inbox.</p>
+              <h3>Stay in the loop</h3>
+              <p>Get notified about new laptop arrivals, deals, and IT career resources.</p>
             </div>
             <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
               <div className="input-group">
@@ -72,31 +64,28 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Main Footer Content */}
       <div className="footer-main">
         <div className="container">
           <div className="footer-grid">
-            {/* Brand Column */}
             <div className="footer-brand">
               <Link to="/" className="footer-logo">
-                <svg viewBox="0 0 120 40" className="logo-svg">
+                <svg viewBox="0 0 140 40" className="logo-svg">
                   <circle cx="20" cy="20" r="18" fill="#00AB5F" />
                   <text x="20" y="26" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">E</text>
-                  <text x="70" y="28" fill="#FFFFFF" fontSize="22" fontWeight="bold" fontFamily="Nunito">Edukit</text>
+                  <text x="46" y="28" fill="#FFFFFF" fontSize="20" fontWeight="800" fontFamily="system-ui">Edukit</text>
                 </svg>
               </Link>
               <p className="footer-tagline">
-                Inspiring the next generation of innovators through hands-on projects and creative play.
+                Bridging the digital divide — shipping quality, affordable laptops from India to Nigeria to power the next generation of IT professionals.
               </p>
               <div className="social-links">
                 <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
                 <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
                 <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-                <a href="#" aria-label="YouTube"><Youtube size={20} /></a>
+                <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
               </div>
             </div>
 
-            {/* Link Columns */}
             {Object.values(footerLinks).map((section) => (
               <div key={section.title} className="footer-column">
                 <h4>{section.title}</h4>
@@ -113,15 +102,13 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} Edukit. All rights reserved.</p>
+            <p>&copy; {currentYear} Edukit. All rights reserved. Operated from India · Delivering to Nigeria.</p>
             <div className="footer-legal">
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/terms">Terms of Service</Link>
-              <Link to="/accessibility">Accessibility</Link>
             </div>
           </div>
         </div>

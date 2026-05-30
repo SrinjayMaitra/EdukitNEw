@@ -10,7 +10,6 @@ const FeaturedProducts = () => {
 
   const handleAddToCart = (product) => {
     console.log('Added to cart:', product);
-    // Cart functionality would be implemented here
   };
 
   return (
@@ -18,8 +17,8 @@ const FeaturedProducts = () => {
       <div className="container">
         <div className="section-header">
           <div className="header-content">
-            <h2>Shop Individual Projects</h2>
-            <p>Not ready for a subscription? Try our individual project kits!</p>
+            <h2>Featured Laptops</h2>
+            <p>Our most popular picks for Nigerian students and IT professionals</p>
           </div>
           <Link to="/shop" className="view-all-link">
             View All <ArrowRight size={20} />
@@ -38,7 +37,7 @@ const FeaturedProducts = () => {
 
         <div className="products-cta">
           <Button to="/shop" variant="primary" size="lg">
-            Shop All Products
+            Browse All Laptops
           </Button>
         </div>
       </div>

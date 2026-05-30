@@ -4,13 +4,16 @@ import { Star, Minus, Plus, ShoppingCart, Heart, Share2, Check, Truck, RotateCcw
 import Button from '../components/common/Button';
 import ProductCard from '../components/common/ProductCard';
 import { getProductById, products } from '../data/products';
+import { useCart } from '../context/CartContext';
 import './ProductDetailPage.css';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const product = getProductById(parseInt(id));
+  const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [added, setAdded] = useState(false);
 
   if (!product) {
     return (
@@ -37,7 +40,9 @@ const ProductDetailPage = () => {
   };
 
   const handleAddToCart = () => {
-    alert(`Added ${quantity} x ${product.name} to cart!`);
+    addToCart(product, quantity);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
   };
 
   return (
@@ -114,10 +119,12 @@ const ProductDetailPage = () => {
               <p className="product-description">{product.description}</p>
 
               <div className="product-meta-info">
-                <div className="meta-item">
-                  <span className="meta-label">Age Range:</span>
-                  <span className="meta-value">{product.ageRange}</span>
-                </div>
+                {product.specs && Object.entries(product.specs).map(([key, val]) => (
+                  <div key={key} className="meta-item">
+                    <span className="meta-label">{key.toUpperCase()}:</span>
+                    <span className="meta-value">{val}</span>
+                  </div>
+                ))}
                 <div className="meta-item">
                   <span className="meta-label">Availability:</span>
                   <span className="meta-value in-stock">
@@ -138,8 +145,17 @@ const ProductDetailPage = () => {
                   </button>
                 </div>
                 <Button variant="primary" size="lg" onClick={handleAddToCart}>
-                  <ShoppingCart size={20} />
-                  Add to Cart
+                  {added ? (
+                    <>
+                      <Check size={20} />
+                      Added to Cart
+                    </>
+                  ) : (
+                    <>
+                      <ShoppingCart size={20} />
+                      Add to Cart
+                    </>
+                  )}
                 </Button>
               </div>
 
@@ -159,15 +175,15 @@ const ProductDetailPage = () => {
                 <div className="shipping-item">
                   <Truck size={20} />
                   <div>
-                    <span className="shipping-title">Free Shipping</span>
-                    <span className="shipping-detail">On orders over $35</span>
+                    <span className="shipping-title">Ships to Nigeria</span>
+                    <span className="shipping-detail">7–14 business days from India</span>
                   </div>
                 </div>
                 <div className="shipping-item">
                   <RotateCcw size={20} />
                   <div>
-                    <span className="shipping-title">Easy Returns</span>
-                    <span className="shipping-detail">30-day return policy</span>
+                    <span className="shipping-title">1-Year Warranty</span>
+                    <span className="shipping-detail">Hardware warranty + remote support</span>
                   </div>
                 </div>
               </div>
@@ -185,20 +201,16 @@ const ProductDetailPage = () => {
             <button className="tab">Reviews ({product.reviewCount})</button>
           </div>
           <div className="details-content">
-            <h3>About this Project</h3>
+            <h3>About this Laptop</h3>
             <p>{product.description}</p>
-            <p>
-              This hands-on project kit includes everything you need to complete
-              the activity. Perfect for kids ages {product.ageRange}, it combines
-              fun with learning to create an engaging experience.
-            </p>
-            <h4>Learning Outcomes:</h4>
+            <h4>Full Specifications:</h4>
             <ul>
-              <li>Develops problem-solving skills</li>
-              <li>Encourages creative thinking</li>
-              <li>Builds fine motor skills</li>
-              <li>Introduces STEAM concepts</li>
+              {product.specs && Object.entries(product.specs).map(([key, val]) => (
+                <li key={key}><strong>{key.toUpperCase()}:</strong> {val}</li>
+              ))}
             </ul>
+            <h4>Shipping:</h4>
+            <p>Ships from India. Delivered to Nigeria in 7–14 business days. All customs paperwork handled by Edukit. 1-year hardware warranty included.</p>
           </div>
         </div>
       </section>

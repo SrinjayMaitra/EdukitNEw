@@ -1,60 +1,56 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import CrateCard from '../common/CrateCard';
-import Button from '../common/Button';
-import { crates, ageGroups } from '../../data/crates';
 import './CratesPreview.css';
 
+const categories = [
+  {
+    id: 'budget',
+    label: 'Budget',
+    range: 'Under $250',
+    description: 'Lightweight, dependable laptops for web browsing, email, and online learning.',
+    color: '#2563EB',
+    path: '/shop?category=budget'
+  },
+  {
+    id: 'mid-range',
+    label: 'Mid-Range',
+    range: '$250 – $370',
+    description: 'Faster processors and more storage — ideal for multitasking and productivity tools.',
+    color: '#00AB5F',
+    path: '/shop?category=mid-range'
+  },
+  {
+    id: 'refurbished',
+    label: 'Refurbished',
+    range: 'Best Value',
+    description: 'Certified pre-owned business laptops. Quality-tested, professionally restored.',
+    color: '#7C3AED',
+    path: '/shop?category=refurbished'
+  }
+];
+
 const CratesPreview = () => {
-  const [selectedAge, setSelectedAge] = useState(null);
-
-  const filteredCrates = selectedAge
-    ? crates.filter(crate => {
-        const [min, max] = crate.ageRange.split('-').map(n => parseInt(n) || 0);
-        const [filterMin, filterMax] = selectedAge.split('-').map(n => parseInt(n) || 100);
-        return min <= filterMax && (max >= filterMin || crate.ageRange.includes('+'));
-      })
-    : crates;
-
   return (
     <section className="crates-preview">
       <div className="container">
         <div className="section-header">
-          <h2>Explore Our Crates</h2>
-          <p>Hands-on projects designed for every age and interest</p>
+          <h2>Shop by Budget</h2>
+          <p>Every category is hand-picked for Nigerian students and professionals starting their IT journey</p>
         </div>
 
-        {/* Age Filter Pills */}
-        <div className="age-filter">
-          <button
-            className={`age-pill ${selectedAge === null ? 'active' : ''}`}
-            onClick={() => setSelectedAge(null)}
-          >
-            All Ages
-          </button>
-          {ageGroups.map(group => (
-            <button
-              key={group.id}
-              className={`age-pill ${selectedAge === group.id ? 'active' : ''}`}
-              onClick={() => setSelectedAge(group.id)}
-            >
-              {group.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Crates Grid */}
         <div className="crates-grid">
-          {filteredCrates.map(crate => (
-            <CrateCard key={crate.id} crate={crate} />
+          {categories.map(cat => (
+            <Link key={cat.id} to={cat.path} className="category-card" style={{ '--cat-color': cat.color }}>
+              <div className="cat-header">
+                <span className="cat-label">{cat.label}</span>
+                <span className="cat-range">{cat.range}</span>
+              </div>
+              <p className="cat-desc">{cat.description}</p>
+              <span className="cat-cta">
+                View laptops <ArrowRight size={16} />
+              </span>
+            </Link>
           ))}
-        </div>
-
-        <div className="crates-cta">
-          <Button to="/crates" variant="outline" size="lg">
-            View All Crates <ArrowRight size={20} />
-          </Button>
         </div>
       </div>
     </section>

@@ -5,59 +5,54 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    name: 'Sarah M.',
-    location: 'California',
+    name: 'Chukwuemeka O.',
+    location: 'Lagos, Nigeria',
     rating: 5,
-    text: "My kids absolutely love getting their Edukit crates each month! The projects are engaging, educational, and most importantly - fun! It's become our favorite family activity.",
-    crate: 'Kiwi Crate',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100'
-  },
-  {
-    id: 2,
-    name: 'Michael T.',
-    location: 'Texas',
-    rating: 5,
-    text: "Tinker Crate has sparked my son's interest in engineering. He's learned so much about how things work and now wants to be an engineer when he grows up!",
-    crate: 'Tinker Crate',
+    text: "I ordered the HP 14s and it arrived in 10 days. Everything was set up out of the box, battery life is incredible. Now I use it daily for my remote support job. Couldn't have started without Edukit.",
+    product: 'HP 14s-dq',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100'
   },
   {
-    id: 3,
-    name: 'Jennifer L.',
-    location: 'New York',
+    id: 2,
+    name: 'Adaeze M.',
+    location: 'Abuja, Nigeria',
     rating: 5,
-    text: "As a busy mom, I love that everything comes ready to go. The instructions are clear, and my daughter feels so proud when she completes her projects.",
-    crate: 'Koala Crate',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100'
+    text: "The Lenovo IdeaPad I got is perfect for my online courses and freelance writing. It's light, the keyboard is great, and Edukit handled all the customs stress. Will recommend to everyone in my cohort.",
+    product: 'Lenovo IdeaPad 1',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100'
+  },
+  {
+    id: 3,
+    name: 'Tunde A.',
+    location: 'Port Harcourt, Nigeria',
+    rating: 5,
+    text: "Bought the refurbished ThinkPad. It feels brand new — no scratches, battery holds all day. For the price, there's nothing better. Their WhatsApp support even helped me set up my VPN for remote work.",
+    product: 'ThinkPad E14 (Refurb)',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100'
   },
   {
     id: 4,
-    name: 'David K.',
-    location: 'Florida',
+    name: 'Ngozi F.',
+    location: 'Enugu, Nigeria',
     rating: 5,
-    text: "Best gift I've ever given my nieces! They're always excited to see what's in their new crate. The quality of materials is impressive.",
-    crate: 'Atlas Crate',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100'
+    text: "I was skeptical about ordering a laptop internationally, but the process was seamless. Full tracking, customs handled, and it arrived in 12 days. The Dell Inspiron 14 is exactly what I needed for data entry work.",
+    product: 'Dell Inspiron 14',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100'
   }
 ];
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
     <section className="testimonials-section">
       <div className="container">
         <div className="testimonials-header">
-          <h2>What Parents Are Saying</h2>
-          <p>Join thousands of happy families discovering the joy of hands-on learning</p>
+          <h2>From Our Customers in Nigeria</h2>
+          <p>Real orders. Real people. Real careers launched.</p>
         </div>
 
         <div className="testimonials-carousel">
@@ -87,7 +82,7 @@ const Testimonials = () => {
                   <div>
                     <span className="author-name">{testimonial.name}</span>
                     <span className="author-location">{testimonial.location}</span>
-                    <span className="author-crate">{testimonial.crate} subscriber</span>
+                    <span className="author-crate">{testimonial.product}</span>
                   </div>
                 </div>
               </div>

@@ -1,31 +1,31 @@
-import { Package, Lightbulb, Smile, Repeat } from 'lucide-react';
+import { ShoppingCart, PackageCheck, Plane, Laptop } from 'lucide-react';
 import Button from '../common/Button';
 import './HowItWorks.css';
 
 const steps = [
   {
-    icon: Package,
+    icon: ShoppingCart,
     number: '01',
-    title: 'Choose Your Crate',
-    description: 'Select the perfect crate based on your child\'s age and interests. We have options for every curious mind!'
+    title: 'Pick Your Laptop',
+    description: 'Browse our curated selection of affordable, work-ready laptops. Filter by budget and read full specs before you buy.'
   },
   {
-    icon: Lightbulb,
+    icon: PackageCheck,
     number: '02',
-    title: 'Receive Monthly Magic',
-    description: 'Every month, a new crate arrives at your door with all materials and instructions for hands-on projects.'
+    title: 'We Pack & Quality Check',
+    description: 'Every unit is tested, cleaned, and carefully packaged at our India facility before it leaves for Nigeria.'
   },
   {
-    icon: Smile,
+    icon: Plane,
     number: '03',
-    title: 'Create & Learn Together',
-    description: 'Spend quality time building, creating, and learning. Watch your child\'s confidence and creativity grow!'
+    title: 'Shipped to Nigeria',
+    description: 'We handle all customs documentation and international logistics. You get a tracking number the moment it ships.'
   },
   {
-    icon: Repeat,
+    icon: Laptop,
     number: '04',
-    title: 'Repeat the Wonder',
-    description: 'Each month brings new discoveries. Pause, skip, or cancel anytime with our flexible subscription.'
+    title: 'Start Working',
+    description: 'Your laptop arrives in 7–14 days, ready to use. All units include a 1-year warranty and after-sale support.'
   }
 ];
 
@@ -35,7 +35,7 @@ const HowItWorks = () => {
       <div className="container">
         <div className="section-header">
           <h2>How It Works</h2>
-          <p>Getting started is easy - here's what to expect</p>
+          <p>From India to your hands in Nigeria — a simple, transparent process</p>
         </div>
 
         <div className="steps-grid">

@@ -261,19 +261,38 @@
 }
 
 .products-grid.list .product-card {
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
+  flex-direction: row;
+  align-items: center;
   gap: 24px;
 }
 
+.products-grid.list .product-card-link {
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+
 .products-grid.list .product-image-container {
-  aspect-ratio: 1;
+  width: 200px;
+  flex-shrink: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.products-grid.list .product-info {
+  padding: 0;
+}
+
+.products-grid.list .product-footer {
+  border-top: none;
+  margin-top: 0;
+  padding: 0;
+  width: 220px;
+  flex-shrink: 0;
 }
 
 .products-grid.list .add-to-cart-btn {
-  width: auto;
-  height: fit-content;
-  align-self: end;
+  width: 100%;
 }
 
 /* No Results */
